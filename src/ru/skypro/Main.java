@@ -24,49 +24,36 @@ public class Main {
     }
 
     static void task1() {
-        int a = 1;
-        while (a <= 10) {
-            System.out.print(a + " ");
-            a++;
+        int counter = 1;
+        while (counter <= 10) {
+            System.out.print(counter++ + " ");
         }
         System.out.println();
 
-        for (int i = 10; i > 0; i--) {
-            System.out.print(i + " ");
+        for (; counter > 1; ) {
+            System.out.print(--counter + " ");
         }
         System.out.println();
     }
 
     static void task2() {
-        int a = 6;
-        for (int i = 0; i < 31; i++) {
-            if (i == a) {
-                System.out.println("Сегодня пятница, " + a + " число. Необходимо подготовить отчет.");
-                a += 7;
+        int numberFriday = 5;
+        for (int Friday = numberFriday; Friday <= 31; Friday += 7) {
+                System.out.println("Сегодня пятница, " + Friday + "-е число. Необходимо подготовить отчет.");
             }
         }
-    }
 
     static void task3() {
-        int start = 1822;
-        int end = 2122;
-        int comet = 79;
-        int counter = 0;
+        int currentYear = 2022;
+        int start = currentYear - 200;
+        int end = currentYear + 100;
 
-        for (int i = 0; i < end; i++) {
-            if (i == comet) {
-                comet += 79;
-            }
-            if (comet >= start && comet <= end) {
-                if (counter == comet) {
-                    continue;
-                } else {
-                    counter = comet;
-                    System.out.println(counter);
+        for (int year = start; year < end; year++) {
+            if (year % 79 == 0){
+                System.out.println(year);
                 }
             }
         }
-    }
 
     static void task4() {
         for (int i = 1; i <= 30; i++) {
@@ -82,20 +69,20 @@ public class Main {
         }
     }
     static void task5() {
-        int a = 0;
-        int b = 1;
+        int number1 = 0;
+        int number2 = 1;
         for (int i = 0; i < 10; i++) {
                if (i == 0){
-                   System.out.print(a + " ");
+                   System.out.print(number1 + " ");
                    continue;
                } else if (i == 1){
-                   System.out.print(b + " ");
+                   System.out.print(number2 + " ");
                    continue;
                }
-               int с = a + b;
-               a = b;
-               b = с;
-            System.out.print(с + " ");
+               int number3 = number1 + number2;
+            number1 = number2;
+            number2 = number3;
+            System.out.print(number3 + " ");
            }
         }
     }
